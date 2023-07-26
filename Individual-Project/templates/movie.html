@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <img class="movie-cover" src="{{ cover }}">
+
+<form action='{{url_for("movie", movie_title=title)}}' method='POST'>
+    <div>
+        
+        <h2> how much do you want to rate it </h2>
+        <input type='radio' name='rating' value='one'>
+        <label for='one'>1</label>
+        <input type='radio' name='rating' value='two'>
+        <label for='two'>2</label>
+        <input type='radio' name='rating' value='three'>
+        <label for='three'>3</label>
+        <input type='radio' name='rating' value='four'>
+        <label for='four'>4</label>
+        <input type='radio' name='rating' value='five'>
+        <label for='five'>5</label>
+        <h2> what do you think about the movie</h2>
+        <input type='text' name='comment'/>
+
+
+        <input type='submit'/>
+    </div>
+</form>
+{{comments['user']}}
+<div>
+{{comments['comment']}}
+</div>
+</body>
+</html>
